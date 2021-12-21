@@ -1,3 +1,13 @@
 {
-    "name": "GoTrue Python Client"
+    "name": "GoTrue Python Client",
+    "sidebar": [
+        [
+            "Overview",
+            "/"
+        ],
+        [
+            "Getting Started",
+            "/getting-started"
+        ]
+    ]
 }
