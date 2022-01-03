@@ -5,11 +5,12 @@ from gotrue import __version__
 AUDIENCE = ""
 COOKIE_OPTIONS = {
     "name": "sb:token",
-    "lifetime": 60 * 60 * 8,
+    "lifetime": 60 ** 2 * 8,
     "domain": "",
     "path": "/",
     "same_site": "lax",
 }
+
 DEFAULT_HEADERS = {
     "X-Client-Info": f"gotrue-py/{__version__}",
 }
