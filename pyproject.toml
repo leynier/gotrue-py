@@ -38,7 +38,7 @@ version_variable = "gotrue/__init__.py:__version__"
 version_toml = "pyproject.toml:tool.poetry.version"
 major_on_zero = false
 commit_subject = "chore(release): bump version to v{version}"
-build_command = "poetry build"
+build_command = "curl -sSL https://install.python-poetry.org | python - && poetry install && poetry build"
 upload_to_release = false
 branch = "main"
 
