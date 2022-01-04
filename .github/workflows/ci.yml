@@ -57,9 +57,15 @@ jobs:
         id: version
         run: echo "::set-output name=current::$(poetry run semantic-release print-version --current)"
       - name: Release to GitHub
-        uses: softprops/action-gh-release@v1
+        # uses: softprops/action-gh-release@v1
+        # with:
+        #   generate_release_notes: true
+        #   tag_name: v${{ steps.version.outputs.current }}
+        # env:
+        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: ncipollo/release-action@v1
         with:
-          generate_release_notes: true
-          tag_name: v${{ steps.version.outputs.current }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          tag: v${{ steps.version.outputs.current }}
+          allowUpdates: true
+          generateReleaseNotes: true
+          token: ${{ secrets.GITHUB_TOKEN }}
