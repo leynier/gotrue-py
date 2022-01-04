@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.4.3 (2022-01-04)
+### Fix
+* Set upload_to_repository to false ([`4f61744`](https://github.com/leynier/gotrue-py/commit/4f61744865f7b2d32fd683882cdfa46f88628dc0))
+
 ## v0.4.2 (2022-01-04)
 ### Fix
 * Build_command ([`8e07f13`](https://github.com/leynier/gotrue-py/commit/8e07f13f11142a16ab64bdf2275b2192a0aa6930))
