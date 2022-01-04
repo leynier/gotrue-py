@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.4.4 (2022-01-04)
+### Fix
+* Ci action ([`34d8cfe`](https://github.com/leynier/gotrue-py/commit/34d8cfea128e43f7bb9cca6c9e04b582b090ddad))
+
 ## v0.4.3 (2022-01-04)
 ### Fix
 * Set upload_to_repository to false ([`4f61744`](https://github.com/leynier/gotrue-py/commit/4f61744865f7b2d32fd683882cdfa46f88628dc0))
