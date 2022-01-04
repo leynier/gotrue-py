@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.4.2 (2022-01-04)
+### Fix
+* Build_command ([`8e07f13`](https://github.com/leynier/gotrue-py/commit/8e07f13f11142a16ab64bdf2275b2192a0aa6930))
+
 ## v0.4.1 (2022-01-04)
 ### Fix
 * Add all step to build_command ([`ca37245`](https://github.com/leynier/gotrue-py/commit/ca372458411112a96a87781a04d4bd8d188cb355))
