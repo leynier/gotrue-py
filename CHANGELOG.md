@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.4.5 (2022-01-04)
+### Fix
+* Change of github release action ([`58527d2`](https://github.com/leynier/gotrue-py/commit/58527d29e3db7b699d55b701071acefef63987f3))
+
 ## v0.4.4 (2022-01-04)
 ### Fix
 * Ci action ([`34d8cfe`](https://github.com/leynier/gotrue-py/commit/34d8cfea128e43f7bb9cca6c9e04b582b090ddad))
