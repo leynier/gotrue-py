@@ -31,19 +31,15 @@ pytest-depends = "^1.0.1"
 pytest-asyncio = "^0.16.0"
 Faker = "^11.1.0"
 unasync-cli = "^0.0.9"
-commitizen = "^2.20.3"
+python-semantic-release = "^7.23.0"
 
-[tool.commitizen]
-name = "cz_customize"
-version = "0.3.2"
-version_files = [
-    "gotrue/__init__.py",
-    "pyproject.toml:version"
-]
-tag_format = "v$version"
-
-[tool.commitizen.customize]
-bump_map = {"!" = "MINOR", "BREAKING-CHANGE" = "MINOR", "feat" = "MINOR", "fix" = "PATCH", "refacto" = "PATCH", "perf" = "PATCH"}
+[tool.semantic_release]
+version_variable = "gotrue/__init__.py:__version__"
+version_toml = "pyproject.toml:tool.poetry.version"
+major_on_zero = false
+commit_subject = "chore(release): bump version to v{version}"
+build_command = "poetry build"
+upload_to_release = false
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

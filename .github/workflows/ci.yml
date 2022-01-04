@@ -37,18 +37,6 @@ jobs:
         with:
           ref: ${{ github.ref }}
           fetch-depth: 0
-      - name: Create bump and changelog
-        uses: commitizen-tools/commitizen-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          generate_release_notes: true
-          tag_name: v${{ env.REVISION }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Set up Python 3.9
         uses: actions/setup-python@v2
         with:
@@ -57,10 +45,21 @@ jobs:
         uses: abatilo/actions-poetry@v2.1.4
         with:
           poetry-version: 1.1.11
-      # - name: Publish
-      #   env:
-      #     PYPI_USERNAME: __token__
-      #     PYPI_PASSWORD: ${{ secrets.PYPI_TOKEN }}
-      #   run: |
-      #     poetry install
-      #     poetry publish --build -u $PYPI_USERNAME -p $PYPI_PASSWORD
+      - name: Poetry install
+        run: poetry install
+      - name: Python Semantic Release
+        uses: relekang/python-semantic-release@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # repository_username: __token__
+          # repository_password: ${{ secrets.PYPI_TOKEN }}
+      - name: Save current version
+        id: version
+        run: echo "::set-output name=current::$(semantic-release print-version --current)"
+      - name: Release to GitHub
+        uses: softprops/action-gh-release@v1
+        with:
+          generate_release_notes: true
+          tag_name: v${{ steps.version.outputs.current }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
