@@ -55,7 +55,7 @@ jobs:
           # repository_password: ${{ secrets.PYPI_TOKEN }}
       - name: Save current version
         id: version
-        run: echo "::set-output name=current::$(semantic-release print-version --current)"
+        run: echo "::set-output name=current::$(poetry run semantic-release print-version --current)"
       - name: Release to GitHub
         uses: softprops/action-gh-release@v1
         with:
